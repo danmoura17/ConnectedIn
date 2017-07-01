@@ -6,9 +6,6 @@ def index(request):
 
 def exibir(request, perfil_id):
 
-	perfil = Perfil()
-
-	if perfil_id == '1':
-		perfil = Perfil('Eu mesmo', 'lindo_eusei@email.com', '123456', 'Empresinha')
-
+	perfil = Perfil.objects.get(id=perfil_id)
+	
 	return render(request, 'perfil.html', {"perfil" : perfil})
