@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.db import migrations, models
+from django.db import models, migrations
 
 
 class Migration(migrations.Migration):
@@ -19,5 +19,8 @@ class Migration(migrations.Migration):
                 ('telefone', models.CharField(max_length=15)),
                 ('nome_empresa', models.CharField(max_length=255)),
             ],
+            options={
+            },
+            bases=(models.Model,),
         ),
     ]

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.db import migrations, models
+from django.db import models, migrations
 
 
 class Migration(migrations.Migration):
@@ -14,6 +14,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='perfil',
             name='contatos',
-            field=models.ManyToManyField(to='perfis.Perfil', related_name='_contatos_+'),
+            field=models.ManyToManyField(related_name='contatos_rel_+', to='perfis.Perfil'),
+            preserve_default=True,
         ),
     ]

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.db import migrations, models
+from django.db import models, migrations
 
 
 class Migration(migrations.Migration):
@@ -14,9 +14,12 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Convite',
             fields=[
-                ('id', models.AutoField(auto_created=True, verbose_name='ID', serialize=False, primary_key=True)),
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('convidado', models.ForeignKey(related_name='convites_recebidos', to='perfis.Perfil')),
                 ('solicitante', models.ForeignKey(related_name='convites_feitos', to='perfis.Perfil')),
             ],
+            options={
+            },
+            bases=(models.Model,),
         ),
     ]
